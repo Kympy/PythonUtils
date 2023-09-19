@@ -10,3 +10,10 @@ class UserInfo:
         self.hp = hp
         self.mp = mp
         self.money = money
+
+class Item:
+    name = ""
+    price = 0
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
