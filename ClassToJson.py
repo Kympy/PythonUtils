@@ -1,12 +1,19 @@
 import json
 import os
+import DictToClass
 
 
-def make(targetclass):
+def make(target):
+
     filepath = os.getcwd()
-    filepath += "\\" + type(targetclass).__name__ + ".json"
+    filepath += "\\" + type(target[0]).__name__ + "Data" + ".json"
+
+    dictlist = []
+    for data in target:
+        dictlist.append(data.__dict__)
+
     with open(filepath, 'w', encoding='utf-8') as make_file:
-        json.dump(targetclass.__dict__, make_file, indent="\t")
+        json.dump(dictlist, make_file, indent="\t")
 
 
 def get(targetclass):
