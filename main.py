@@ -3,6 +3,8 @@ import ClassToJson
 import JsonToClass
 
 if __name__ == '__main__':
+
+# Create user info data
     user1 = TestClass.UserInfo("A", 10, 100, 50, 2340)
     user2 = TestClass.UserInfo("B", 32, 750, 250, 15902)
 
@@ -12,8 +14,15 @@ if __name__ == '__main__':
 
 # Make Class Type To Json File
     ClassToJson.make(userlist)
-# Create Item Class
-    item = TestClass.Item("Sword", 1500)
-# Get Json From Item Class And Pass Over
-    JsonToClass.make(ClassToJson.get(item))
+
+# Create Test Class
+    class Test:
+        def __init__(self, value):
+            self.value = value
+
+    testclass = Test(100)
+
+# Get Json From Item Class And Pass Over : Make Test.py
+    JsonToClass.make(ClassToJson.get(testclass), type(testclass).__name__)
+    print(testclass.value)
 
