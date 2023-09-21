@@ -1,6 +1,8 @@
 import TestClass
 import ClassToJson
 import JsonToClass
+import ImageFilter
+
 
 if __name__ == '__main__':
 
@@ -26,3 +28,6 @@ if __name__ == '__main__':
     JsonToClass.make(ClassToJson.get(testclass), type(testclass).__name__)
     print(testclass.value)
 
+# Load Image And Set Filter
+    ImageFilter.negative("TestImage.jpg")
+    ImageFilter.custom_gray_scale("TestImage.jpg")
